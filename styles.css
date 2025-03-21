@@ -1,0 +1,83 @@
+/* Master Styles */
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  background-color: #0d0d0d;
+  color: #f4f4f4;
+}
+
+footer {
+  background-color: #ef92d0;
+  color: #0d0d0d;
+}
+
+/* Font Styles */
+
+h1 {
+  font-family: "Fragment Mono", monospace;
+  font-weight: 400;
+  font-size: xx-large;
+}
+
+h2 {
+  font-family: "Fragment Mono", monospace;
+  font-weight: 400;
+  font-size: x-large;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+}
+
+/* NAV Styles */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 92%;
+  margin: 0 auto;
+  border-bottom: 2px solid #f4f4f4;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  color: #f4f4f4;
+}
+
+.logo {
+  max-width: 80px;
+  height: auto;
+}
+
+/* Welcome */
+
+.farm {
+  background-image: url("images/farm.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 95vh;
+}
