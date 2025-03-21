@@ -1,5 +1,10 @@
 /* Master Styles */
 
+header, main {
+  position: relative;
+  z-index: 1; 
+}
+
 body {
   margin: 0 auto;
   padding: 0;
@@ -75,9 +80,66 @@ nav ul li a {
 /* Welcome */
 
 .farm {
+  min-height: 95vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.farm::before {
+  content: '';
+  position: absolute;
+  inset: 0;
   background-image: url("images/farm.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  filter: blur(3px);
+  transform: scale(1.1); 
+  z-index: -1;
+}
+
+.welcome {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   min-height: 95vh;
+  position: relative;
+}
+
+.welcome p {
+  line-height: 0.5;
+}
+
+.intro, .titles, .callouts {
+  line-height: 0.5; 
+}
+
+.intro {
+  grid-column: 2; 
+  grid-row: 1;
+  justify-self: end;
+  align-self: start;
+  padding: 20px;
+}
+
+.titles {
+  grid-column: 1; 
+  grid-row: 2;
+  justify-self: start;
+  align-self: end;
+  border: 2px solid #f4f4f4; 
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.titles h3 {
+  margin-top: 8px;
+}
+
+.callouts {
+  grid-column: 2; 
+  grid-row: 2;
+  justify-self: end;
+  align-self: end;
+  padding: 20px;
 }
