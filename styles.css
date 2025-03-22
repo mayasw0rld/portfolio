@@ -1,3 +1,22 @@
+/* Scrollbar styles */
+
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid #f4f4f4;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color:#95a3c500; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0037ff;
+}
+
 /* Master Styles */
 
 header, main {
@@ -6,10 +25,12 @@ header, main {
 }
 
 body {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
+  width: 100%;
   background-color: #0d0d0d;
   color: #f4f4f4;
+  overflow-x: hidden;
 }
 
 footer {
@@ -22,7 +43,8 @@ footer {
 h1 {
   font-family: "Fragment Mono", monospace;
   font-weight: 400;
-  font-size: xx-large;
+  margin: 10px;
+  font-size: 60px;
 }
 
 h2 {
@@ -53,11 +75,12 @@ button {
   padding: 10px 20px 10px 20px;
   background-color: transparent;
   transition: background-color 0.3s ease, border 0.3s ease;
+  margin-left: 10px;
 }
 
 button:hover {
   background-color: #0D34BF;
-  border: 2px solid #f4f4f400;
+  border: 1.5px solid #f4f4f400;
 }
 
 /* NAV Styles */
@@ -66,8 +89,8 @@ nav {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  width: 92%;
-  margin: 0 auto;
+  margin-right: 50px;
+  margin-left: 50px;
   border-bottom: 2px solid #f4f4f4;
 }
 
@@ -97,24 +120,32 @@ nav ul li a {
   height: auto;
 }
 
-/* Welcome */
+/********************************************************* 
+WELCOME SECTION ****************************************/
 
 .farm {
-  min-height: 88vh;
   position: relative;
+  min-height: 88vh;
+  width: 100%;
   overflow: hidden;
 }
 
-.farm::before {
-  content: '';
+
+.bg-img {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%;
   background-image: url("images/farm.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
+  pointer-events: none;
 }
+
+
 
 .welcome {
   display: grid;
@@ -221,4 +252,264 @@ nav ul li a {
   grid-row: 2;
   justify-self: end;
   align-self: end;
+}
+
+
+/********************************************************* 
+MY WORK SECTION ****************************************/
+
+/* MY WORK TITLE SECTION */
+.myworktitle {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #000;
+  width: 100%;
+}
+
+
+.scrolling-text {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 25s linear infinite;
+}
+
+.scrolling-text h1 {
+  font-size: 60px;
+  font-family: "Fragment Mono", monospace;
+  font-weight: 400;
+  color: white;
+  margin: 0 2rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* HORIZONTAL SCROLL SECTION */
+
+/* Horizontal Scroll Wrapper */
+.horizontal-scroll-wrapper {
+  position: relative;
+  overflow: visible;
+}
+
+.horizontal-scroll-inner {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* MY WORK TITLE SECTION */
+.myworktitle {
+  overflow: hidden;
+  width: 100%;
+  background-color: #000;
+  flex-shrink: 0;
+}
+
+/* Scrolling Text (MY WORK) */
+.scrolling-text {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 25s linear infinite;
+}
+
+.scrolling-text h1 {
+  font-size: 60px;
+  font-family: "Fragment Mono", monospace;
+  font-weight: 400;
+  color: white;
+  margin: 0 2rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 16px;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Cards Row */
+.cards-row {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  will-change: transform;
+  transition: transform 0.1s linear;
+  background-color: #000;
+}
+
+/* Cards */
+.card {
+  flex: 0 0 auto;
+  width: 286px;
+  height: 425px;
+  margin-right: 1rem;
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Card Image */
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #aaa;
+}
+
+/* Card Information (Project Name, Year, and Category) */
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align to the top */
+  margin-top: 0.75rem;
+  width: 100%; /* Ensure full width */
+}
+
+.card-info .project {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-info .org {
+  text-align: right;
+  margin-top: 0.5rem; 
+}
+
+/* Project Title in the Card */
+.card h3 {
+  margin-top: 0.5rem;
+  font-size: 16px; /* Adjusted size */
+}
+
+/* Italic Text Styling for Project Description */
+.card i {
+  font-family: "Fragment Mono", monospace;
+  display: block;
+}
+
+/* Category Text Styling */
+.org {
+  color: #DD6512; /* Orange color for category */
+}
+
+
+/********************************************************* 
+ABOUT ME SECTION ****************************************/
+
+/* About Me Section */
+.aboutme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: #000;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+/* Title Section */
+.aboutmetitle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  width: 100%;
+}
+
+.aboutmetitle h1 {
+  font-size: 60px;
+  font-weight: 400;
+  margin: 0;
+  flex-grow: 1; /* This ensures the title is aligned to the right */
+}
+
+.arrow-img {
+  width: 30px;
+  height: auto;
+}
+
+/* About Me Content (Image + Text) */
+.aboutme-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 30px;
+  width: 100%;
+}
+
+/* Left: Image */
+.aboutmepic {
+  flex: 0 0 35%; /* Image takes 35% of the space */
+  margin-right: 20px; /* Space between image and text */
+}
+
+.aboutmepic img {
+  width: 100%;
+  height: auto;
+  border: 4px solid orange;
+  border-radius: 8px;
+}
+
+/* Right: Text + Buttons */
+.aboutmetext {
+  flex: 1; /* Take up remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out the paragraphs and buttons */
+}
+
+.aboutmepg {
+  text-align: left;
+  margin-top: 0;
+}
+
+.aboutmepg p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #f4f4f4;
+}
+
+/* Buttons Section */
+.aboutmebtns {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.aboutmebtns button {
+  color: #f4f4f4;
+  background-color: transparent;
+  border: 2px solid #f4f4f4;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.aboutmebtns button:hover {
+  background-color: #0d34bf;
+  border-color: transparent;
 }
