@@ -28,24 +28,43 @@ h1 {
 h2 {
   font-family: "Fragment Mono", monospace;
   font-weight: 400;
-  font-size: x-large;
+  font-size: 30px;
 }
 
 h3 {
   font-family: "Inter", sans-serif;
   font-weight: 400;
+  line-height: 0.8
 }
 
 p {
   font-family: "Inter", sans-serif;
-  font-weight: 200;
+  font-weight: 400;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+/* Button Styles */
+
+button {
+  color: #f4f4f4;
+  border: 1.5px solid #f4f4f4;
+  border-radius: 20px;
+  padding: 10px 20px 10px 20px;
+  background-color: transparent;
+  transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+button:hover {
+  background-color: #0D34BF;
+  border: 2px solid #f4f4f400;
 }
 
 /* NAV Styles */
 
 nav {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   width: 92%;
   margin: 0 auto;
@@ -63,6 +82,7 @@ nav ul {
 
 nav ul li {
   margin-left: 20px;
+  margin-bottom: 15px;
 }
 
 nav ul li a {
@@ -73,14 +93,14 @@ nav ul li a {
 }
 
 .logo {
-  max-width: 80px;
+  max-width: 70px;
   height: auto;
 }
 
 /* Welcome */
 
 .farm {
-  min-height: 95vh;
+  min-height: 88vh;
   position: relative;
   overflow: hidden;
 }
@@ -93,8 +113,6 @@ nav ul li a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: blur(3px);
-  transform: scale(1.1); 
   z-index: -1;
 }
 
@@ -102,12 +120,11 @@ nav ul li a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  min-height: 95vh;
+  min-height: 80vh;
   position: relative;
-}
-
-.welcome p {
-  line-height: 0.5;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 40px;
 }
 
 .intro, .titles, .callouts {
@@ -119,7 +136,11 @@ nav ul li a {
   grid-row: 1;
   justify-self: end;
   align-self: start;
-  padding: 20px;
+  text-align: right;
+}
+
+.txt-pnk {
+  color: rgb(255, 177, 220);
 }
 
 .titles {
@@ -127,13 +148,72 @@ nav ul li a {
   grid-row: 2;
   justify-self: start;
   align-self: end;
-  border: 2px solid #f4f4f4; 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
   border-radius: 20px;
-  padding: 10px;
+  padding: 20px 25px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05); 
+  backdrop-filter: blur(3px); 
+  -webkit-backdrop-filter: blur(10px); 
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
 }
 
-.titles h3 {
-  margin-top: 8px;
+
+.titleswrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+}
+
+.titlesimg {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.titlesimg img {
+  width: 50px; 
+  height: auto;
+    opacity: 0.9; 
+  filter: brightness(0.95); 
+}
+
+/* Hover animations on titles imgs */
+
+.titlesimg img:first-child {
+  transition: transform 1.5s linear;
+}
+
+.titlesimg img:first-child:hover {
+  transform: rotate(90deg);
+}
+
+.titlesimg img:last-child {
+  transition: transform 0.2s ease-in-out;
+}
+
+.titlesimg img:last-child:hover {
+  transform: scale(0.85);
+}
+
+.titlestxt {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.titlestxt h3 {
+  color: white; 
+  margin: 0;
+  opacity: 0.9; 
+  filter: brightness(0.95); 
+  transition: color 0.3s ease;
+}
+
+.titlestxt h3:hover {
+  color: #DD6512;
 }
 
 .callouts {
@@ -141,5 +221,4 @@ nav ul li a {
   grid-row: 2;
   justify-self: end;
   align-self: end;
-  padding: 20px;
 }
