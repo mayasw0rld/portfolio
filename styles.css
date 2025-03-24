@@ -150,8 +150,6 @@ WELCOME SECTION ****************************************/
   pointer-events: none;
 }
 
-
-
 .welcome {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -161,7 +159,20 @@ WELCOME SECTION ****************************************/
   padding-right: 50px;
   padding-left: 50px;
   padding-bottom: 40px;
+  overflow: hidden;
 }
+
+/* .cursor-circle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: difference; 
+  background: white; 
+  box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.6);
+  z-index: 1000;
+} */
 
 .intro, .titles, .callouts {
   line-height: 0.5; 
@@ -258,6 +269,11 @@ WELCOME SECTION ****************************************/
   justify-self: end;
   align-self: end;
 }
+
+/* 
+.callouts button {
+  cursor: none;
+} */
 
 
 /********************************************************* 
@@ -576,3 +592,251 @@ ABOUT ME SECTION ****************************************/
     transform: translateY(0px);
   }
 }
+
+
+/**************************************************** CONTACT SECTION ********************************************/
+
+.contact {
+  padding: 4rem 0;
+  background-color: #0a0a0a;
+  color: white;
+}
+
+/* Centered and padded container */
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.contact-container h1 {
+  margin-bottom: 2rem;
+}
+
+/* Flex layout for form + info */
+.contact-body {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: nowrap;
+}
+
+.form {
+  flex: 0 0 60%;
+}
+
+.contactinfo {
+  flex: 0 0 40%;
+}
+
+/* Form elements */
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-row input {
+  flex: 1;
+  border: none;
+  border-bottom: 1px solid white;
+  background: transparent;
+  color: white;
+  padding: 0.5rem 0;
+}
+
+textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid white;
+  background: transparent;
+  color: white;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  resize: none;
+}
+
+/* Contact info */
+.contactinfo p {
+  margin-bottom: 1rem;
+}
+
+.contactinfo i {
+  margin-right: 0.5rem;
+  color: #f4f4f4;
+  text-decoration: none;
+}
+
+.contactinfo i:hover {
+  color: #DD6512;
+}
+
+
+/* Footer Styles */
+
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #e982d4; /* bright pink background */
+  color: black;
+  flex-wrap: wrap;
+}
+
+.footerinfo {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.8;
+  gap: 1rem;
+  flex: 1;
+  padding: 2rem 2rem 0 2rem;
+}
+
+.footerinfo h2 {
+  margin: 0;
+}
+
+.footerinfo h2:hover {
+  color: #0036c9;
+}
+
+.footericons {
+  color: #0d0d0d;
+  display: flex;
+  gap: 1rem;
+}
+
+.footericons a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footericons a:hover {
+  color: #0036c9;
+}a
+
+.footercredit {
+  margin: 0;
+}
+
+.footerimg {
+  max-height: 239px;
+}
+
+
+
+/*****************************************************************************************************************************************************************************************************************************************************/
+/* MOBILE STYLES */
+
+/* About Mobile */
+@media (max-width: 900px) {
+
+  .aboutme {
+    padding: 0;
+  }
+
+  .aboutme-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  .arrow-img {
+    display: none;
+  }
+
+  .aboutmepic {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .aboutmetext {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .aboutmetitle {
+    justify-content: center;
+  }
+
+  .aboutmebtns {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .aboutmebtns a button {
+    width: 200px;
+    margin: 0 auto;
+  }
+}
+
+
+/* Services Mobil */
+
+@media (max-width: 900px) {
+  .services-container {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .srvc .nmbr {
+    font-size: 80px;
+  }
+
+  .srvc h2 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .srvc .nmbr {
+    font-size: 60px;
+  }
+
+  .letschat {
+    margin-top: 60px;
+  }
+
+  .letschat img {
+    max-height: 16px;
+  }
+}
+
+
+/* Contact Mobile */
+@media (max-width: 900px) {
+  .contact-body {
+    flex-direction: column;
+  }
+
+  .form,
+  .contactinfo {
+    flex: 0 0 100%;
+  }
+}
+
+/* Footer  layout */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.5rem;
+  }
+
+  .footerimg {
+    width: 100%;
+    max-height: none;
+    margin-top: 2rem;
+  }
+}
+
+
