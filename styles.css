@@ -396,6 +396,12 @@ MY WORK SECTION ****************************************/
   height: 100%;
   object-fit: cover;
   background-color: #aaa;
+  filter: saturate(100%);
+  transition: border-radius 0.8s ease;
+}
+
+.card img:hover {
+  border-radius: 20px;
 }
 
 /* Card Information (Project Name, Year, and Category) */
