@@ -42,3 +42,4 @@ gsap.to(cardsRow, {
 // welcomeSection.addEventListener("mouseleave", () => {
 //   cursor.style.display = "none";
 // });
+
