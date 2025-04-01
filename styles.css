@@ -88,42 +88,47 @@ button:hover {
   cursor: pointer;
 }
 
-/* NAV Styles */
+  /* NAV Styles */
 
-nav {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-right: 50px;
-  margin-left: 50px;
-  border-bottom: 2px solid #f4f4f4;
-}
+  nav {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-right: 50px;
+    margin-left: 50px;
+    border-bottom: 2px solid #f4f4f4;
+  }
 
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 
-nav ul li {
-  margin-left: 20px;
-  margin-bottom: 15px;
-}
+  nav ul li {
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
 
-nav ul li a {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  text-decoration: none;
-  color: #f4f4f4;
-}
+  nav ul li a {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    color: #f4f4f4;
+    transition: color 0.5Ss ease;
+  }
 
-.logo {
-  max-width: 70px;
-  height: auto;
-}
+  nav ul li a:hover {
+    color: #0037ff;
+  }
+
+  .logo {
+    max-width: 70px;
+    height: auto;
+  }
 
 /********************************************************* 
 WELCOME SECTION ****************************************/
@@ -274,6 +279,123 @@ WELCOME SECTION ****************************************/
 .callouts button {
   cursor: none;
 } */
+
+
+/* MOBILE STYLES FOR HOME */
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .logo {
+    margin: 10px 0;
+  }
+
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .intro {
+    grid-column: unset;
+    grid-row: unset;
+    justify-self: unset;
+    align-self: unset;
+    text-align: center;
+  }
+
+  .titles {
+    grid-column: unset;
+    grid-row: unset;
+    justify-self: unset;
+    align-self: unset;
+    padding: 15px 20px;
+  }
+
+  .titlesimg {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .titlesimg img {
+    width: 40px;
+  }
+
+  .titlestxt h3 {
+    font-size: 16px;
+  }
+
+  .callouts {
+    grid-column: unset;
+    grid-row: unset;
+    justify-self: unset;
+    align-self: unset;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  button {
+    margin: 0;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+  nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 20px;
+    position: relative;
+  }
+
+  .hamburger {
+    font-size: 28px;
+    cursor: pointer;
+    color: #f4f4f4;
+    display: block;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #0d0d0d;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px 20px;
+    display: none;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .callouts {
+    display: none; /* Hide About Me and Let's Chat buttons */
+  }
 
 
 /********************************************************* 
@@ -603,41 +725,41 @@ ABOUT ME SECTION ****************************************/
 /**************************************************** CONTACT SECTION ********************************************/
 
 .contact {
-  padding: 4rem 0;
+  padding: 4rem 8rem;
   background-color: #0a0a0a;
   color: white;
 }
 
-/* Centered and padded container */
-.contact-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.contact-container h1 {
+.contact h1 {
   margin-bottom: 2rem;
 }
 
-/* Flex layout for form + info */
-.contact-body {
+.contact-container {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 4rem;
   flex-wrap: nowrap;
 }
 
+/* FORM stays on the left */
 .form {
   flex: 0 0 60%;
 }
 
+/* CONTACT INFO stays on the right */
 .contactinfo {
-  flex: 0 0 40%;
+  flex: 0 0 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-/* Form elements */
+/* Keep your input layout */
 .form-row {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -661,21 +783,49 @@ textarea {
   resize: none;
 }
 
-/* Contact info */
+/* Align icons inline with text */
 .contactinfo p {
-  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  margin: 0;
 }
 
-.contactinfo i {
-  margin-right: 0.5rem;
-  color: #f4f4f4;
-  text-decoration: none;
+/* Icon styles (visual only) */
+.contactinfo .fab:hover {
+  color: #0037ff;
 }
 
-.contactinfo i:hover {
-  color: #DD6512;
+.contactinfo i.fa-linkedin {
+  margin-right: 5px;
 }
 
+.contactinfo i.fa-instagram {
+  margin-right: 5px;
+}
+
+.submit {
+  margin-left: 0;
+}
+
+/* Responsive — stack on smaller screens */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .form,
+  .contactinfo {
+    flex: 0 0 100%;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .contact {
+    padding: 3rem 2rem;
+  }
+}
 
 /* Footer Styles */
 
