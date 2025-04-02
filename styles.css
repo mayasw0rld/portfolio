@@ -130,6 +130,56 @@ button:hover {
     height: auto;
   }
 
+  .hamburger {
+  display: none; /* hidden on desktop */
+}
+
+/* ----- Mobile Styles ----- */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 20px;
+    padding-top: 10px;
+    position: relative;
+    border-bottom: none;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #f4f4f4;
+    z-index: 1001;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #0d0d0d;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 10px 20px;
+    z-index: 1000;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    font-size: 18px;
+  }
+}
+
 /********************************************************* 
 WELCOME SECTION ****************************************/
 
@@ -228,7 +278,7 @@ WELCOME SECTION ****************************************/
 .titlesimg img {
   width: 50px; 
   height: auto;
-    opacity: 0.9; 
+  opacity: 0.9; 
   filter: brightness(0.95); 
 }
 
@@ -275,32 +325,16 @@ WELCOME SECTION ****************************************/
   align-self: end;
 }
 
-/* 
-.callouts button {
-  cursor: none;
-} */
-
-
-/* MOBILE STYLES FOR HOME */
+.callouts button:hover {
+  border: 1.5px solid rgba(255, 255, 255, 0.2); 
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05); 
+  backdrop-filter: blur(2px); 
+  -webkit-backdrop-filter: blur(10px); 
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
 
 @media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-    margin: 0 20px;
-    text-align: center;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
-  .logo {
-    margin: 10px 0;
-  }
-
   .welcome {
     display: flex;
     flex-direction: column;
@@ -312,18 +346,10 @@ WELCOME SECTION ****************************************/
   }
 
   .intro {
-    grid-column: unset;
-    grid-row: unset;
-    justify-self: unset;
-    align-self: unset;
     text-align: center;
   }
 
   .titles {
-    grid-column: unset;
-    grid-row: unset;
-    justify-self: unset;
-    align-self: unset;
     padding: 15px 20px;
   }
 
@@ -341,61 +367,9 @@ WELCOME SECTION ****************************************/
   }
 
   .callouts {
-    grid-column: unset;
-    grid-row: unset;
-    justify-self: unset;
-    align-self: unset;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  button {
-    margin: 0;
-    padding: 8px 16px;
-    font-size: 14px;
+    display: none; /* 🔥 Hides "About Me" + "Let's Chat" on mobile */
   }
 }
-
-  nav {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 20px;
-    position: relative;
-  }
-
-  .hamburger {
-    font-size: 28px;
-    cursor: pointer;
-    color: #f4f4f4;
-    display: block;
-  }
-
-  nav ul {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #0d0d0d;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 10px 20px;
-    display: none;
-  }
-
-  nav ul.show {
-    display: flex;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-
-  .callouts {
-    display: none; /* Hide About Me and Let's Chat buttons */
-  }
 
 
 /********************************************************* 
@@ -520,10 +494,11 @@ MY WORK SECTION ****************************************/
   background-color: #aaa;
   filter: saturate(100%);
   transition: border-radius 0.8s ease;
+  border-radius: 15px;
 }
 
 .card img:hover {
-  border-radius: 20px;
+  border-radius: 2px;
 }
 
 /* Card Information (Project Name, Year, and Category) */
@@ -612,6 +587,7 @@ ABOUT ME SECTION ****************************************/
   border: 6px solid #DD6512;
 }
 
+
 .aboutmepg p {
   line-height: 1.5
 }
@@ -623,6 +599,8 @@ ABOUT ME SECTION ****************************************/
 }
 
 .arrow-img {
+  transition: transform 0.6s ease;
+  transform-origin: center center;
   width: 35px;
 }
 
@@ -635,13 +613,17 @@ ABOUT ME SECTION ****************************************/
   margin-bottom: 40px;
 }
 
+.resumebtn {
+  margin-left: 0;
+}
+
 
 /*********************************************************
 ************* MY SERVICES ********************************/
 
 .myservices {
   text-align: center;
-  padding: 100px 0;
+  padding: 70px 0;
   background-image: url(images/services.jpg); 
   background-size: cover;
   background-position: center;
@@ -674,7 +656,7 @@ ABOUT ME SECTION ****************************************/
 }
 
 .letschat {
-  margin-top: 100px;
+  margin-top: 70px;
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
@@ -703,10 +685,9 @@ ABOUT ME SECTION ****************************************/
   animation: float 2s ease-in-out infinite;
 }
 
-.letschat:hover {
+.letschat a:hover {
   color: #000;
   filter: brightness(0);
-  transform: scale(1.1);
 }
 
 @keyframes float {
@@ -725,7 +706,7 @@ ABOUT ME SECTION ****************************************/
 /**************************************************** CONTACT SECTION ********************************************/
 
 .contact {
-  padding: 4rem 8rem;
+  padding: 6rem 8rem;
   background-color: #0a0a0a;
   color: white;
 }
@@ -783,7 +764,6 @@ textarea {
   resize: none;
 }
 
-/* Align icons inline with text */
 .contactinfo p {
   display: flex;
   align-items: center;

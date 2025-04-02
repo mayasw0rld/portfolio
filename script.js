@@ -43,3 +43,33 @@ gsap.to(cardsRow, {
 //   cursor.style.display = "none";
 // });
 
+
+const arrow = document.getElementById("arrowImg");
+const aboutMeSection = document.getElementById("aboutme");
+
+window.addEventListener("scroll", () => {
+    const rect = aboutMeSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    // Scroll range where you want the rotation to occur
+    const triggerStart = windowHeight; // when section enters bottom of viewport
+    const triggerEnd = windowHeight / 2; // adjust this value to make it end sooner
+
+    // Calculate progress in that range
+    const progress = (rect.top - triggerEnd) / (triggerStart - triggerEnd);
+    const clamped = Math.min(Math.max(progress, 0), 1);
+
+    // Rotate from 0 to -180
+    const rotation = clamped * -180;
+
+    arrow.style.transform = `rotate(${rotation}deg)`;
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+});

@@ -23,12 +23,14 @@
         <header>
             <nav>
                 <img class="logo" src="images/logo_white.png" alt="">
-                <ul>
+                <div class="hamburger" id="hamburger">&#9776;</div> <!-- shows on mobile -->
+                <ul id="nav-links">
                     <li><a href="#mywork">Work</a></li>
                     <li><a href="#aboutme">About Me</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+
         </header>
 
         <main>
@@ -130,28 +132,6 @@
                             <h3 class="org">Illustration</h3>
                         </div>
                     </a>
-
-                    <a href="#" class="card prjct6">
-                        <img src="" alt="">
-                        <div class="card-info">
-                            <div class="project">
-                                <h3>Concept</h3>
-                                <i>2023</i>
-                            </div>
-                            <h3 class="org">Concept Art</h3>
-                        </div>
-                    </a>
-
-                    <a href="#" class="card prjct7">
-                        <img src="" alt="">
-                        <div class="card-info">
-                            <div class="project">
-                                <h3>Case Study</h3>
-                                <i>2022</i>
-                            </div>
-                            <h3 class="org">UI Design</h3>
-                        </div>
-                    </a>
                 </div>
 
             </div>
@@ -169,7 +149,8 @@
             <div class="aboutmetext">
                 <div class="aboutmetitle">
                     <h1>ABOUT ME</h1>
-                    <img src="images/arrow.png" alt="arrow" class="arrow-img">
+                    <img src="images/arrow.png" alt="arrow" class="arrow-img" id="arrowImg">
+
                 </div>
 
                 <div class="aboutmepg">
@@ -179,7 +160,7 @@
                 </div>
 
                 <div class="aboutmebtns">
-                    <a href=" "><button>Resumé</button></a>
+                    <a href=" "><button class="resumebtn">Resumé</button></a>
                     <a href="#contact"><button>Contact Me</button></a>
                 </div>
             </div>
